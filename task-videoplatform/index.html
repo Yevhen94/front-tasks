@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Videoplatform</title>
+  </head>
+  <body>
+    <!-- Set svg-mode from icon-moon -->
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <symbol id="icon-instagram" viewbox="0 0 32 32">
+          <path
+            d="M16 0c-4.173 0-4.694 0.020-6.332 0.096-1.636 0.080-2.749 0.348-3.729 0.744-1.010 0.408-1.868 0.956-2.721 1.845s-1.381 1.781-1.772 2.835c-0.38 1.020-0.639 2.18-0.714 3.884-0.077 1.707-0.092 2.249-0.092 6.596s0.019 4.889 0.092 6.596c0.077 1.703 0.334 2.864 0.714 3.884 0.392 1.051 0.918 1.945 1.772 2.835 0.854 0.888 1.71 1.439 2.721 1.845 0.98 0.395 2.094 0.665 3.729 0.744 1.638 0.080 2.159 0.096 6.332 0.096s4.694-0.020 6.332-0.096c1.635-0.080 2.749-0.349 3.729-0.744 1.009-0.408 1.867-0.957 2.721-1.845 0.853-0.889 1.381-1.78 1.772-2.835 0.379-1.020 0.639-2.181 0.714-3.884 0.077-1.707 0.092-2.249 0.092-6.596s-0.019-4.889-0.092-6.596c-0.077-1.703-0.335-2.865-0.714-3.884-0.392-1.052-0.919-1.945-1.772-2.835-0.854-0.889-1.709-1.439-2.721-1.845-0.979-0.396-2.094-0.665-3.729-0.744-1.638-0.080-2.159-0.096-6.332-0.096zM16 2.88c4.1 0 4.589 0.021 6.208 0.095 1.498 0.073 2.31 0.332 2.851 0.553 0.719 0.289 1.229 0.636 1.769 1.195 0.536 0.56 0.869 1.092 1.147 1.841 0.21 0.563 0.461 1.409 0.529 2.969 0.073 1.688 0.090 2.195 0.090 6.467s-0.019 4.78-0.095 6.467c-0.078 1.56-0.328 2.407-0.539 2.969-0.287 0.749-0.613 1.28-1.151 1.843-0.536 0.559-1.055 0.905-1.766 1.195-0.538 0.219-1.363 0.48-2.861 0.551-1.631 0.076-2.111 0.093-6.219 0.093-4.11 0-4.59-0.020-6.22-0.099-1.499-0.081-2.324-0.341-2.862-0.561-0.728-0.299-1.229-0.639-1.765-1.199-0.539-0.559-0.883-1.099-1.152-1.84-0.211-0.56-0.46-1.42-0.538-2.98-0.058-1.68-0.078-2.199-0.078-6.459 0-4.261 0.020-4.781 0.078-6.481 0.078-1.56 0.326-2.419 0.538-2.979 0.269-0.76 0.613-1.28 1.152-1.841 0.536-0.559 1.037-0.919 1.765-1.197 0.538-0.221 1.345-0.481 2.843-0.561 1.632-0.060 2.112-0.080 6.22-0.080l0.058 0.040zM16 7.784c-4.358 0-7.887 3.68-7.887 8.216 0 4.54 3.533 8.216 7.887 8.216 4.358 0 7.887-3.68 7.887-8.216 0-4.54-3.533-8.216-7.887-8.216zM16 21.333c-2.829 0-5.12-2.387-5.12-5.333s2.291-5.333 5.12-5.333c2.829 0 5.12 2.387 5.12 5.333s-2.291 5.333-5.12 5.333zM26.043 7.46c0 1.060-0.827 1.92-1.843 1.92-1.018 0-1.843-0.861-1.843-1.92s0.827-1.919 1.843-1.919c1.015-0.001 1.843 0.86 1.843 1.919z"
+          ></path>
+        </symbol>
+        <symbol id="icon-twitter" viewbox="0 0 32 32">
+          <path
+            d="M31.937 5.68c-1.18 0.54-2.44 0.908-3.767 1.076 1.352-0.849 2.392-2.186 2.884-3.782-1.268 0.771-2.673 1.332-4.169 1.644-1.195-1.332-2.897-2.165-4.788-2.165-3.622 0-6.56 3.060-6.56 6.829 0 0.542 0.060 1.062 0.169 1.561-5.453-0.268-10.286-2.996-13.521-7.119-0.569 1.003-0.888 2.168-0.888 3.437 0 2.375 1.16 4.462 2.917 5.689-1.076-0.036-2.088-0.344-2.971-0.856v0.085c0 3.312 2.257 6.075 5.261 6.704-0.551 0.154-1.132 0.238-1.728 0.238-0.419 0-0.82-0.042-1.221-0.119 0.841 2.712 3.26 4.69 6.138 4.746-2.24 1.832-5.078 2.923-8.136 2.923-0.52 0-1.039-0.032-1.56-0.093 2.919 1.936 6.357 3.068 10.076 3.068 12.071 0 18.665-10.411 18.665-19.424 0-0.29 0-0.583-0.020-0.875 1.281-0.957 2.4-2.167 3.28-3.539l-0.063-0.028z"
+          ></path>
+        </symbol>
+        <symbol id="icon-arrow" viewbox="0 0 31 32">
+          <path
+            d="M5.524 28.267l3.733 3.733 16-16-16-16-3.733 3.733 12.267 12.267-12.267 12.267z"
+          ></path>
+        </symbol>
+        <symbol id="icon-call" viewbox="0 0 32 32">
+          <path
+            fill="#eee"
+            style="fill: var(--color1, #eee)"
+            d="M0 0h32v32h-32v-32z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#222"
+            style="stroke: var(--color2, #222)"
+            stroke-linejoin="miter"
+            stroke-linecap="butt"
+            stroke-miterlimit="4"
+            stroke-width="1.0323"
+            d="M0.552 0.552h30.897v30.897h-30.897v-30.897z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M18.069 9.793h-4.138c-0.914 0-1.655 0.741-1.655 1.655v9.103c0 0.914 0.741 1.655 1.655 1.655h4.138c0.914 0 1.655-0.741 1.655-1.655v-9.103c0-0.914-0.741-1.655-1.655-1.655z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="miter"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M14.897 20.966h2.207"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M15.931 11.035c-0.114 0-0.207 0.093-0.207 0.207s0.093 0.207 0.207 0.207c0.114 0 0.207-0.093 0.207-0.207s-0.093-0.207-0.207-0.207z"
+          ></path>
+        </symbol>
+        <symbol id="icon-channels" viewbox="0 0 32 32">
+          <path
+            fill="#eee"
+            style="fill: var(--color1, #eee)"
+            d="M0 0h32v32h-32v-32z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#222"
+            style="stroke: var(--color2, #222)"
+            stroke-linejoin="miter"
+            stroke-linecap="butt"
+            stroke-miterlimit="4"
+            stroke-width="1.0323"
+            d="M0.552 0.552h30.897v30.897h-30.897v-30.897z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M13.517 14.345c1.257 0 2.276-1.019 2.276-2.276s-1.019-2.276-2.276-2.276c-1.257 0-2.276 1.019-2.276 2.276s1.019 2.276 2.276 2.276z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M16.116 16.235c-1.071-1.048-2.665-1.352-4.046-0.77s-2.278 1.934-2.277 3.432"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M21.379 18.069h-3.31c-0.457 0-0.828 0.371-0.828 0.828v2.483c0 0.457 0.371 0.828 0.828 0.828h3.31c0.457 0 0.828-0.371 0.828-0.828v-2.483c0-0.457-0.371-0.828-0.828-0.828z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M19.724 15.586c-0.914 0-1.655 0.741-1.655 1.655v0.828h3.31v-0.828c0-0.914-0.741-1.655-1.655-1.655z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M19.724 19.947c-0.114 0-0.207 0.093-0.207 0.207s0.093 0.207 0.207 0.207 0.207-0.093 0.207-0.207c0-0.055-0.022-0.108-0.060-0.146s-0.092-0.061-0.146-0.060z"
+          ></path>
+        </symbol>
+        <symbol id="icon-free-costs" viewbox="0 0 32 32">
+          <path
+            fill="#eee"
+            style="fill: var(--color1, #eee)"
+            d="M0 0h32v32h-32v-32z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#222"
+            style="stroke: var(--color2, #222)"
+            stroke-linejoin="miter"
+            stroke-linecap="butt"
+            stroke-miterlimit="4"
+            stroke-width="1.0323"
+            d="M0.552 0.552h30.897v30.897h-30.897v-30.897z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M19.080 17.655c-0.581 1.268-1.774 2.069-3.080 2.069"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M21.068 13.104c-0.992-2.035-2.943-3.309-5.067-3.309s-4.075 1.273-5.067 3.309"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M10.478 14.342c-0.645 2.527 0.245 5.22 2.223 6.729s4.619 1.509 6.598 0c1.979-1.509 2.868-4.203 2.223-6.729"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M16 13.103c0.051 1.77-1.23 3.252-2.865 3.31-1.634-0.059-2.916-1.54-2.865-3.31h5.729z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M21.729 13.103c0.051 1.77-1.23 3.252-2.865 3.31-1.634-0.059-2.916-1.54-2.865-3.31h5.729z"
+          ></path>
+        </symbol>
+        <symbol id="icon-recording" viewbox="0 0 32 32">
+          <path
+            fill="#eee"
+            style="fill: var(--color1, #eee)"
+            d="M0 0h32v32h-32v-32z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#222"
+            style="stroke: var(--color2, #222)"
+            stroke-linejoin="miter"
+            stroke-linecap="butt"
+            stroke-miterlimit="4"
+            stroke-width="1.0323"
+            d="M0.552 0.552h30.897v30.897h-30.897v-30.897z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M14.345 16.655h-3.724c-0.457 0-0.828-0.371-0.828-0.828v-4.966c0-0.457 0.371-0.828 0.828-0.828h6.621c0.457 0 0.828 0.371 0.828 0.828v3.724"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M20.182 15.228l1.427 0.713c0.128 0.064 0.281 0.057 0.402-0.018s0.196-0.209 0.196-0.352v-4.454c0-0.143-0.074-0.277-0.196-0.352s-0.274-0.082-0.402-0.018l-1.427 0.713c-0.28 0.14-0.457 0.427-0.457 0.74v2.287c0 0.313 0.177 0.599 0.457 0.739z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M20.374 19.197l-3.334-2.001c-0.128-0.077-0.287-0.079-0.417-0.005s-0.21 0.211-0.21 0.36v4.001c0 0.149 0.080 0.287 0.21 0.36s0.289 0.071 0.417-0.005l3.334-2c0.125-0.075 0.201-0.209 0.201-0.355s-0.076-0.28-0.201-0.355z"
+          ></path>
+        </symbol>
+        <symbol id="icon-subscriber" viewbox="0 0 32 32">
+          <path
+            fill="#eee"
+            style="fill: var(--color1, #eee)"
+            d="M0 0h32v32h-32v-32z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#222"
+            style="stroke: var(--color2, #222)"
+            stroke-linejoin="miter"
+            stroke-linecap="butt"
+            stroke-miterlimit="4"
+            stroke-width="1.0323"
+            d="M0.552 0.552h30.897v30.897h-30.897v-30.897z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M11.862 13.931c0.686 0 1.241-0.556 1.241-1.241s-0.556-1.241-1.241-1.241c-0.686 0-1.241 0.556-1.241 1.241s0.556 1.241 1.241 1.241z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M11.862 14.759c-1.143 0-2.069 0.926-2.069 2.069v1.241h0.828l0.414 3.31h1.655"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M20.138 13.931c0.686 0 1.241-0.556 1.241-1.241s-0.556-1.241-1.241-1.241c-0.686 0-1.241 0.556-1.241 1.241s0.556 1.241 1.241 1.241z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M20.138 14.759c1.143 0 2.069 0.926 2.069 2.069v1.241h-0.828l-0.414 3.31h-1.655"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M16 13.103c0.914 0 1.655-0.741 1.655-1.655s-0.741-1.655-1.655-1.655c-0.914 0-1.655 0.741-1.655 1.655s0.741 1.655 1.655 1.655z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M18.897 16.828c0-1.6-1.297-2.897-2.897-2.897s-2.897 1.297-2.897 2.897v1.241h1.241l0.414 4.138h2.483l0.414-4.138h1.241v-1.241z"
+          ></path>
+        </symbol>
+        <symbol id="icon-transcription" viewbox="0 0 32 32">
+          <path
+            fill="#eee"
+            style="fill: var(--color1, #eee)"
+            d="M0 0h32v32h-32v-32z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#222"
+            style="stroke: var(--color2, #222)"
+            stroke-linejoin="miter"
+            stroke-linecap="butt"
+            stroke-miterlimit="4"
+            stroke-width="1.0323"
+            d="M0.552 0.552h30.897v30.897h-30.897v-30.897z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M13.931 19.31l-1.655 1.241v-2.483h-1.655c-0.457 0-0.828-0.371-0.828-0.828v-6.621c0-0.457 0.371-0.828 0.828-0.828h9.103c0.457 0 0.828 0.371 0.828 0.828v2.483"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M12.686 15.283c0.522 0.276 1.080 0.476 1.659 0.593"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M13.103 12.276v0.828"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M17.241 12.276v0.828"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M22.207 19.724h-1.655v2.483l-2.483-2.483h-2.483v-4.965h6.621v4.965z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M17.241 17.035c-0.114 0-0.207 0.093-0.207 0.207s0.093 0.207 0.207 0.207c0.114 0 0.207-0.093 0.207-0.207s-0.093-0.207-0.207-0.207z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M18.897 17.035c-0.114 0-0.207 0.093-0.207 0.207s0.093 0.207 0.207 0.207c0.114 0 0.207-0.093 0.207-0.207s-0.093-0.207-0.207-0.207z"
+          ></path>
+          <path
+            fill="none"
+            stroke="#000"
+            style="stroke: var(--color3, #000)"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-miterlimit="4"
+            stroke-width="0.7742"
+            d="M20.552 17.035c-0.114 0-0.207 0.093-0.207 0.207s0.093 0.207 0.207 0.207c0.114 0 0.207-0.093 0.207-0.207s-0.093-0.207-0.207-0.207z"
+          ></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <!-- end svg-mode -->
+    <div class="container max-w-[1440px] mx-auto my-0">
+      <!-- header -->
+      <header class="c-header py-7 px-8 sm:px-[70px]">
+        <div
+          class="c-header__wrapper flex sm:flex-row flex-col justify-between items-center md:pr-[105px]"
+        >
+          <div class="c-header__logo mb-5 sm:mb-0">
+            <img src="./assets/images/logo.png" alt="logo" class="e-img" />
+          </div>
+          <div class="c-header__login">
+            <button
+              class="c-loginBtn rounded-lg border border-[#222222] w-28 py-1.5"
+              type="button"
+              id="loginBtn"
+            >
+              <span class="leading-5"> Sign in</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- main content -->
+      <main class="c-main">
+        <!-- baner section -->
+        <section
+          class="c-baner flex justify-center md:justify-end items-center pl-[70px] bg-gradient-to-b from-[#DCFCE7] from-[70%] to-[#FFF] md:from-inherit"
+        >
+          <div
+            class="c-baner__content py-8 md:py-0 max-w-[438px] mr-[55px] text-center md:text-left"
+          >
+            <h1
+              class="tracking-[1px] xl:text-title text-[18px] md:text-[30px] mb-[26px] text-[#222222]"
+            >
+              A video platform for the world’s leading minds
+            </h1>
+            <p
+              class="text-[14px] md:text-[20px] max-w-[400px] mb-[30px] text-[#555555]"
+            >
+              Superpeer gives you the tools you need to have paid 1:1 video
+              calls and livestreams with your audience and paid subscribers.
+            </p>
+            <button
+              class="w-[150px] sm:w-[190px] bg-[#FFD338] p-[15px] rounded-lg"
+              type="button"
+              id="inviteBtn"
+            >
+              <span class="text-[12px] sm:text-[16px]">REQUEST INVITE</span>
+            </button>
+          </div>
+          <div class="c-baner__img hidden md:block">
+            <img src="./assets/images/Frame.png" alt="frame" />
+          </div>
+        </section>
+        <!-- info-calls section -->
+        <section
+          class="c-info-calls bg-gradient-to-b from-[#FFF9E8] from-[70%] to-[#FFF] bg-no-repeat relative mt-8 sm:mt-[62px] pt-10 sm:pt-[192px] text-center"
+        >
+          <img
+            src="./assets/images/Vector.png"
+            alt="line"
+            class="absolute top-0 hidden sm:block"
+          />
+          <div
+            class="c-info-calls__wrapper max-w-[1090px] mx-auto text-[#555555] pb-10 xl:pb-80 px-8 text-center"
+          >
+            <div class="c-info-calls__title-block mb-10 sm:mb-[100px]">
+              <h2
+                class="text-[36px] sm:text-[52px] leading-none mb-[25px] text-[#222222]"
+              >
+                Take 1:1 Video Calls
+              </h2>
+              <p class="text-[20px] max-w-[660px] mx-auto">
+                Join best-selling authors, TED speakers, YouTubers, and advisors
+                using Superpeer to earn online!
+              </p>
+            </div>
+            <div class="c-info-calls__content-block relative text-left">
+              <div
+                class="flex flex-col items-center sm:items-start sm:flex-row justify-start lg:relative mb-8"
+              >
+                <div class="max-w-[270px] max-w-[270px] order-2 sm:order-1">
+                  <img src="./assets/images/first-step.png" alt="schedule" />
+                </div>
+                <div
+                  class="max-w-[330px] sm:ml-10 pt-0 mb-5 sm:mb-0 sm:pt-[58px] text-center sm:text-start sm:order-2"
+                >
+                  <h4 class="text-[#222222] text-[18px] sm:text-[22px]">
+                    1. Pick your own schedule
+                  </h4>
+                  <p class="mt-2 text-[14px] sm:text-[18px]">
+                    You have total control over your availability. Superpeer
+                    checks your calendar and only accepts bookings when you are
+                    free.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="lg:absolute top-[312px] left-[86px] flex flex-col items-center text-center lg:text-start lg:block mb-5 lg:mb-0"
+              >
+                <img
+                  src="./assets/images/second-step.png"
+                  alt="cv-example"
+                  class="order-2"
+                />
+                <div class="max-w-[330px] mb-5 sm:mb-0 sm:mt-10">
+                  <h4 class="text-[#222222] text-[18px] sm:text-[22px]">
+                    2. Set your rate
+                  </h4>
+                  <p class="mt-2 text-[14px] sm:text-[18px]">
+                    Superpeer automatically collects payments for you via credit
+                    card or PayPal with automatic refunds and no-show
+                    protection.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="lg:relative flex flex-col sm:flex-row justify-end items-center lg:items-end text-center sm:text-right lg:mt-[172px]"
+              >
+                <div class="max-w-[330px] sm:mr-10 mb-5 sm:mb-0">
+                  <h4 class="text-[#222222] text-[18px] sm:text-[22px]">
+                    3. Meet right in the browser
+                  </h4>
+                  <p class="mt-2 text-[14px] sm:text-[18px]">
+                    No apps or downloads required. Simply hop into calls right
+                    from the calendar invite into the browser.
+                  </p>
+                </div>
+                <div class="max-w-[270px]">
+                  <img
+                    src="./assets/images/third-step.png"
+                    alt="call-example"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- livestreams info section -->
+        <section
+          class="c-streams pb-8 lg:pb-[103px] bg-gradient-to-b from-[#F0ECFF] from-[70%] to-[#FFF]"
+        >
+          <div
+            class="c-streams__wrapper mx-auto max-w-[1090px] px-8 text-center pt-[30px] text-[#555]"
+          >
+            <div class="c-streams__title-block mb-10 sm:mb-[100px]">
+              <h2
+                class="text-[36px] sm:text-[56px] sm:leading-none mb-[25px] text-[#222]"
+              >
+                Beautiful Livestreams
+              </h2>
+              <p class="text-[16px] sm:text-[20px] max-w-[660px] mx-auto">
+                Superpeer Channels allow you to host livestreams, build a
+                community and earn with recurring monthly subscriptions.
+              </p>
+            </div>
+            <div class="c-streams__content-block relative text-left">
+              <div
+                class="flex flex-col sm:items-start items-center sm:flex-row justify-start lg:relative mb-8"
+              >
+                <div class="max-w-[270px] order-2 sm:order-1">
+                  <img
+                    src="./assets/images/subscribers.png"
+                    alt="subscribers-info"
+                  />
+                </div>
+                <div
+                  class="max-w-[330px] sm:ml-10 pt-0 mb-5 sm:mb-0 sm:pt-[58px] text-center sm:text-start sm:order-2"
+                >
+                  <h4 class="text-[#222222] text-[18px] sm:text-[22px]">
+                    1. Turn your audience into subscribers
+                  </h4>
+                  <p class="mt-2 text-[14px] sm:text-[18px]">
+                    Superpeer channels are designed to accrue subscribers and
+                    automatically send them a calendar invite each time you do
+                    another stream.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="lg:absolute top-[310px] left-[72px] flex flex-col items-center text-center lg:text-start lg:block mb-5 lg:mb-0"
+              >
+                <img
+                  src="./assets/images/livestreams.png"
+                  alt="livestreams-info"
+                  class="order-2"
+                />
+                <div class="max-w-[330px] mb-5 sm:mb-0 sm:mt-10">
+                  <h4 class="text-[#222222] text-[18px] sm:text-[22px]">
+                    2. Livestream with small groups or thousands of viewers
+                  </h4>
+                  <p class="mt-2 text-[14px] sm:text-[18px] leading-[25px]">
+                    Superpeer gives you tools to let your viewers go live with
+                    you and speak, comment and upvote, and network with each
+                    other.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="lg:relative flex flex-col sm:flex-row text-center justify-end items-center lg:items-end lg:mt-[198px] sm:text-right"
+              >
+                <div class="max-w-[278px] sm:mr-10 mb-5 sm:mb-0">
+                  <h4 class="text-[#222222] text-[18px] sm:text-[22px]">
+                    3. Earn recurring revenue through subscriptions
+                  </h4>
+                  <p class="mt-2 text-[14px] sm:text-[18px]">
+                    Sell tickets to streams, introduce channel subscription
+                    fees, allow donations, or make it totally free.
+                  </p>
+                </div>
+                <div class="max-w-[270px]">
+                  <img src="./assets/images/payout.png" alt="payout-info" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- main features section -->
+        <section class="c-features pb-20 xl:pb-72 pt-16 xl:pt-[160px]">
+          <div
+            class="c-features__wrapper text-[#555555] text-center mx-auto max-w-[1090px] px-[17px]"
+          >
+            <div class="c-features__title-block mb-[24px] lg:mb-[86px]">
+              <h2
+                class="text-[36px] sm:text-[55px] text-[#222222] sm:leading-none"
+              >
+                Features
+              </h2>
+            </div>
+            <div
+              class="sm:max-w-[1090px] mx-auto c-features__content-block sm:grid grid-cols-2 md:grid-cols-3 gap-y-[80px] text-[18px] gap-x-[20px]"
+            >
+              <div
+                class="flex flex-col justify-start items-center mx-auto max-w-[400px] mb-[15px] sm:mb-0"
+              >
+                <svg class="w-[58px] h-[58px] icon icon-subscriber">
+                  <use xlink:href="#icon-subscriber"></use>
+                </svg>
+                <h4 class="text-[22px] mb-2 mt-[17px] text-[#222]">
+                  Subscriber Management Tools
+                </h4>
+                <p>
+                  Superpeer makes it easy for you to learn more about your
+                  subscribers with email management and analytics tools.
+                </p>
+              </div>
+              <div
+                class="flex flex-col justify-start items-center mx-auto max-w-[400px] mb-[15px] sm:mb-0"
+              >
+                <svg class="w-[58px] h-[58px] icon icon-recording">
+                  <use xlink:href="#icon-recording"></use>
+                </svg>
+                <h4 class="text-[22px] mb-2 mt-[17px] text-[#222]">
+                  Recordings
+                </h4>
+                <p>
+                  High quality video and audio recordings are available
+                  instantly for publishing and download.
+                </p>
+              </div>
+              <div
+                class="flex flex-col justify-start items-center mx-auto max-w-[400px] mb-[15px] sm:mb-0"
+              >
+                <svg class="w-[58px] h-[58px] icon icon-transcription">
+                  <use xlink:href="#icon-transcription"></use>
+                </svg>
+                <h4 class="text-[22px] mb-2 mt-[17px] text-[#222]">
+                  Transcription
+                </h4>
+                <p>
+                  Every stream is recorded and transcribed automatically at no
+                  additional cost to you (coming soon!)
+                </p>
+              </div>
+              <div
+                class="flex flex-col justify-start items-center mx-auto max-w-[400px] mb-[15px] sm:mb-0"
+              >
+                <svg class="w-[58px] h-[58px] icon icon-channels">
+                  <use xlink:href="#icon-channels"></use>
+                </svg>
+                <h4 class="text-[22px] mb-2 mt-[17px] text-[#222]">
+                  Members-only Channels
+                </h4>
+                <p>
+                  You can require an approval before someone can subscribe to
+                  your channel. This is great for client-only or employee-only
+                  channels.
+                </p>
+              </div>
+              <div
+                class="flex flex-col justify-start items-center mx-auto max-w-[400px] mb-[15px] sm:mb-0"
+              >
+                <svg class="w-[58px] h-[58px] icon icon-free-costs">
+                  <use xlink:href="#icon-free-costs"></use>
+                </svg>
+                <h4 class="text-[22px] mb-2 mt-[17px] text-[#222]">
+                  No Monthly Costs
+                </h4>
+                <p>
+                  Superpeer is free to use, we only make money when you make
+                  money.
+                </p>
+              </div>
+              <div
+                class="flex flex-col justify-start items-center mx-auto max-w-[400px]"
+              >
+                <svg class="w-[58px] h-[58px] icon icon-call">
+                  <use xlink:href="#icon-call"></use>
+                </svg>
+                <h4 class="text-[22px] mb-2 mt-[17px] text-[#222]">
+                  No Expensive Gear Required
+                </h4>
+                <p>
+                  Livestream just as easily as getting on a FaceTime call,
+                  without high-end microphones or cameras—and it looks amazing!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="c-pricing bg-[#FFF9E8] pt-[30px] px-[10px] sm:px-0">
+          <div class="c-pricing__wrapper text-center pb-[97px]">
+            <div class="c-pricing__title mb-[68px]">
+              <h2
+                class="text-[36px] sm:text-[55px] text-[#222] sm:leading-[62px]"
+              >
+                Pricing
+              </h2>
+            </div>
+            <div
+              class="c-pricing__slider relative flex justify-center items-center"
+            >
+              <!-- Slider main container -->
+              <div class="swiper max-w-[70%] lg:max-w-[735px] order-2">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide relative">
+                    <img
+                      src="./assets/images/slide-bg.png"
+                      alt="slide-bg"
+                      class="img-shadow"
+                    />
+                    <div class="slide-content absolute inset-0 py-[39px]">
+                      <div
+                        class="slide-content__wrapper p-[5px] sm:p-0 h-[100%] text-[#666666] flex flex-col align-center justify-center leading-none"
+                      >
+                        <h6
+                          class="text-white text-[19px] mb-[5px] sm:mb-[18px]"
+                        >
+                          1:1 Calls
+                        </h6>
+                        <div
+                          class="text-[20px] sm:text-[50px] flex justify-center mb-[10px] sm: mb-[26px]"
+                        >
+                          <span class="line-through decoration-4 mr-4">10%</span
+                          ><span class="text-white">10%</span>
+                        </div>
+                        <span>Just Credit Card fees - 3%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide relative">
+                    <img src="./assets/images/slide-bg.png" alt="slide-bg" />
+                    <div class="slide-content absolute inset-0 py-[39px]">
+                      <div
+                        class="slide-content__wrapper p-[5px] sm:p-0 h-[100%] flex flex-col align-center justify-center leading-none text-white"
+                      >
+                        <h6 class="text-[22px] mb-[5px] sm:mb-[16px]">
+                          Channels
+                        </h6>
+                        <span
+                          class="text-[20px] sm:text-[50px] mb-[10px] sm: mb-[26px]"
+                          >10%</span
+                        >
+                        <span class="text-[#666]"
+                          >Plus Credit Card fees - 3%</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide relative">
+                    <img src="./assets/images/slide-bg.png" alt="slide-bg" />
+                    <div class="slide-content absolute inset-0 py-[39px]">
+                      <div
+                        class="slide-content__wrapper p-[5px] sm:p-0 h-[100%] text-[#666666] flex flex-col align-center justify-center leading-none"
+                      >
+                        <h6
+                          class="text-white text-[19px] mb-[5px] sm:mb-[18px]"
+                        >
+                          1:1 Calls
+                        </h6>
+                        <div
+                          class="text-[20px] sm:text-[50px] mb-[10px] sm: mb-[26px] flex justify-center mb-[26px]"
+                        >
+                          <span class="line-through decoration-4 mr-4">10%</span
+                          ><span class="text-white">10%</span>
+                        </div>
+                        <span>Just Credit Card fees - 3%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide relative">
+                    <img src="./assets/images/slide-bg.png" alt="slide-bg" />
+                    <div class="slide-content absolute inset-0 py-[39px]">
+                      <div
+                        class="slide-content__wrapper p-[5px] sm:p-0 h-[100%] flex flex-col align-center justify-center leading-none text-white"
+                      >
+                        <h6 class="text-[22px] mb-[5px] sm:mb-[16px]">
+                          Channels
+                        </h6>
+                        <span
+                          class="text-[20px] sm:text-[50px] mb-[10px] sm: mb-[26px]"
+                          >10%</span
+                        >
+                        <span class="text-[#666]"
+                          >Plus Credit Card fees - 3%</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- If we need navigation buttons -->
+              <div
+                class="swiper-button-prev order-1 rounded-full bg-[#FFD338] mr-[10px] sm:mr-5"
+              >
+                <svg
+                  class="icon icon-arrow w-[15px] h-[15px] sm:w-[25px] sm:h-[25px] rotate-180"
+                >
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+              </div>
+              <div
+                class="swiper-button-next order-3 rounded-full bg-[#FFD338] ml-[10px] sm:ml-5"
+              >
+                <svg
+                  class="icon icon-arrow w-[15px] h-[15px] sm:w-[25px] sm:h-[25px]"
+                >
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="px-2 c-invite pt-[30px] pb-[60px] xl:pt-[240px] xl:pb-[238px]"
+        >
+          <div
+            class="c-invite__wrapper mx-auto max-w-[1026px] flex items-center flex-col text-center"
+          >
+            <div class="c-invite__title mb-[25px] text-[#222]">
+              <h2
+                class="text-[25px] sm:text-[36px] md:leading-[62px] md:text-[56px]"
+              >
+                Ready to become a Superpeer?
+              </h2>
+            </div>
+            <p
+              class="text-[14px] sm:text-[20px] leading-[28px] text-[#555] max-w-[430px] mb-[33px]"
+            >
+              Build and grow your community face-to-face and make money while
+              you do it.
+            </p>
+            <button
+              class="w-[150px] sm:w-[190px] bg-[#FFD338] p-[15px] rounded-lg leading-[20px]"
+            >
+              <span class="text-[12px] sm:text-[16px]">REQUEST INVITE</span>
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer class="c-footer pb-8 xl:pb-[110px] text-[#222]">
+        <div
+          class="c-footer__wrapper px-4 xl:px-0 grid md:grid-cols-3 max-w-[1026px] mx-auto"
+        >
+          <nav class="c-footer__nav mb-4 md:mb-0">
+            <ul
+              class="c-nav-list flex justify-center md:justify-between items-center"
+            >
+              <li class="c-nav__item mr-8">
+                <a href="#" class="no-underline">Blog</a>
+              </li>
+              <li class="c-nav__item mr-8">
+                <a href="#" class="no-underline">FAQ</a>
+              </li>
+              <li class="c-nav__item mr-8">
+                <a href="#" class="no-underline">Privacy</a>
+              </li>
+              <li class="c-nav__item md:mr-16">
+                <a href="#" class="no-underline">Terms</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="c-footer__socials flex justify-center mb-4 md:mb-0">
+            <a href="https://twitter.com" class="mr-6" target="_blank"
+              ><svg class="icon icon-twitter w-6 h-6">
+                <use xlink:href="#icon-twitter"></use>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com" class="" target="_blank"
+              ><svg class="icon icon-instagram w-6 h-6">
+                <use xlink:href="#icon-instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="c-footer__copyright text-center md:text-end">
+            <span>Superpeer, Inc.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
